@@ -12,15 +12,15 @@ services:
     networks:
       - web_network
 
-  webnode:
+  webflask:
     build:
-      context: webnode/
+      context: webflask/
     restart: always
-    command: ["npm", "start"]
+    command: ["python", "webflask.py"]
     ports:
       - "8001:8001"
     volumes:
-      - ./webnode:/webnode
+      - ./webflask:/webflask
     networks:
       - web_network
 
@@ -32,6 +32,18 @@ services:
       - "8002:8002"
     volumes:
       - ./webgo:/webgo
+    networks:
+      - web_network
+
+  webnode:
+    build:
+      context: webnode/
+    restart: always
+    command: ["npm", "start"]
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./webnode:/webnode
     networks:
       - web_network
 
