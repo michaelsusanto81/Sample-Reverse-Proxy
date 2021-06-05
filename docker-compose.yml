@@ -24,6 +24,17 @@ services:
     networks:
       - web_network
 
+  webgo:
+    build:
+      context: webgo/
+    restart: always
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./webgo:/webgo
+    networks:
+      - web_network
+
 networks:
   web_network:
     name: web_network
