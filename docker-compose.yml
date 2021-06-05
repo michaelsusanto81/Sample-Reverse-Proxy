@@ -1,0 +1,29 @@
+version: '3'
+services:
+  webdjango:
+    build:
+      context: webdjango/
+    restart: always
+    command: ["gunicorn", "webdjango.wsgi", "-b", "0.0.0.0:8000"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./webdjango:/webdjango
+    networks:
+      - web_network
+
+  webnode:
+    build:
+      context: webnode/
+    restart: always
+    command: ["npm", "start"]
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./webnode:/webnode
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    name: web_network

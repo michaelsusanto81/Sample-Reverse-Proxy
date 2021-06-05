@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:14-slim
 
 # Create webnode directory
 RUN mkdir /webnode
