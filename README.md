@@ -14,3 +14,9 @@ docker-compose up -d --build
 ```cmd
 docker-compose down -v
 ```
+
+## Routes:
+- Django -> localhost:8000
+- Flask -> localhost:8001
+- Go -> localhost:8002
+- NodeJS -> localhost:8003
