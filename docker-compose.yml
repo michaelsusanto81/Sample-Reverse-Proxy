@@ -9,8 +9,6 @@ services:
       - "8000:8000"
     volumes:
       - ./webdjango:/webdjango
-    networks:
-      - web_network
 
   webflask:
     build:
@@ -21,8 +19,6 @@ services:
       - "8001:8001"
     volumes:
       - ./webflask:/webflask
-    networks:
-      - web_network
 
   webgo:
     build:
@@ -32,8 +28,6 @@ services:
       - "8002:8002"
     volumes:
       - ./webgo:/webgo
-    networks:
-      - web_network
 
   webnode:
     build:
@@ -44,9 +38,10 @@ services:
       - "8003:8003"
     volumes:
       - ./webnode:/webnode
-    networks:
-      - web_network
 
-networks:
-  web_network:
-    name: web_network
+  nginx:
+    build:
+      context: nginx/
+    restart: always
+    ports:
+      - "80:80"
