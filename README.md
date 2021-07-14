@@ -1,8 +1,15 @@
-# Hello World Applications
-Run hello world applications from many languages.
+# Hello World Applications with Reverse Proxy
+Run hello world applications from many languages with Nginx as Reverse Proxy.
 
 ## Author
 * Michael Susanto
+
+## Techstacks
+- Django (Web Server)
+- Flask (Web Server)
+- Go (Web Server)
+- NodeJS (Web Server)
+- Nginx (Reverse Proxy)
 
 ## How to use
 * Run & build the services
@@ -16,7 +23,7 @@ docker-compose down -v
 ```
 
 ## Routes:
-- Django -> localhost:8000
-- Flask -> localhost:8001
-- Go -> localhost:8002
-- NodeJS -> localhost:8003
+- Django -> http://localhost/django/
+- Flask -> http://localhost/flask/
+- Go -> http://localhost/go/
+- NodeJS -> http://localhost/node/
